@@ -27,8 +27,18 @@ fullpage-test.js
 check-card-content.js
 listen-console.js
 
-# Screenshots (not needed in production)
-*.png
+# Screenshots and test images at root (not needed in production)
+screenshot-*.png
+debug-*.png
+deep-*.png
+final-*.png
+redesign-*.png
+valentine-*.png
+timeline-scroll-*.png
+after-*.png
+fullpage-*.png
+viewport-*.png
+card-highlighted.png
 
 # Backup files
 *-backup.*
