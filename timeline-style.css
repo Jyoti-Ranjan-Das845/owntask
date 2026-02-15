@@ -62,12 +62,15 @@ body::before {
   position: absolute;
   bottom: -10%;
   font-size: clamp(1.5rem, 4vw, 3.5rem);
-  color: rgba(255, 180, 210, 0.7);
   animation: floatHeart linear infinite;
-  text-shadow: 0 0 20px rgba(255, 143, 177, 0.8),
-               0 0 40px rgba(255, 143, 177, 0.5);
-  filter: drop-shadow(0 0 15px rgba(255, 180, 210, 0.6));
-  -webkit-text-stroke: 0.5px rgba(255, 143, 177, 0.3);
+  background: radial-gradient(circle, #ffffff, #ffb3d2, #c02b56);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6))
+          drop-shadow(0 0 30px rgba(192, 43, 86, 0.5))
+          drop-shadow(0 0 40px rgba(141, 16, 52, 0.3));
 }
 
 .background-hearts span:nth-child(1) { left: 8%; animation-duration: 18s; animation-delay: 0s; }
@@ -522,8 +525,11 @@ body.journey-active .journey-container {
 /* Promise Card */
 .promise-card {
   display: none;
+  width: 90vw;
+  height: 90vh;
   max-width: 600px;
-  margin: 3rem auto;
+  max-height: 800px;
+  margin: 0 auto;
   border-radius: 1.8rem;
   padding: clamp(2rem, 4vw, 3rem);
   background: rgba(27, 2, 12, 0.85);
@@ -534,6 +540,8 @@ body.journey-active .journey-container {
   text-align: center;
   position: relative;
   z-index: 50;
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
 .promise-card.visible {
@@ -810,6 +818,16 @@ body.journey-active .journey-container {
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
     border-top: 8px solid rgba(27, 2, 12, 0.85);
+  }
+
+  .promise-card {
+    width: 90vw;
+    height: 90vh;
+    max-width: 90vw;
+    max-height: 90vh;
+    padding: 1rem;
+    box-sizing: border-box;
+    overflow-y: auto;
   }
 
   .promise-card h2 {
