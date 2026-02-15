@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Journey Together</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="timeline-style.css" />
+  </head>
+  <body>
+    <!-- Background floating hearts -->
+    <div class="background-hearts" aria-hidden="true">
+      <span>❤</span>
+      <span>✦</span>
+      <span>❤</span>
+      <span>✦</span>
+      <span>❤</span>
+      <span>✧</span>
+      <span>❤</span>
+      <span>✦</span>
+      <span>❤</span>
+      <span>✧</span>
+      <span>❤</span>
+      <span>✦</span>
+      <span>❤</span>
+      <span>✧</span>
+      <span>❤</span>
+      <span>✦</span>
+      <span>❤</span>
+      <span>✧</span>
+    </div>
+
+    <main class="journey-container">
+      <header class="journey-header">
+        <p class="eyebrow">Our Story</p>
+        <h1>Our Journey</h1>
+        <p class="intro-text">Watch the love hop along the path...</p>
+        <button class="start-journey-btn" id="startJourneyBtn">Begin Our Journey →</button>
+      </header>
+
+      <!-- Curvy Path Track -->
+      <div class="path-container">
+        <svg class="curvy-track" viewBox="0 0 800 2900" preserveAspectRatio="xMidYMid meet">
+          <!-- Curvy path -->
+          <path
+            id="journey-path"
+            d="M 200 100 Q 130 250, 57 400 Q 10 550, 114 700 T 285 700 Q 320 850, 270 1000 T 114 1000 Q 50 1150, 171 1300 T 342 1300 Q 380 1450, 257 1600 T 171 1600 Q 160 1750, 200 1900 T 228 1900 Q 260 2050, 310 2200 T 360 2200 Q 380 2350, 200 2500 T 40 2500"
+            fill="none"
+            stroke="#4ade80"
+            stroke-width="4"
+            stroke-opacity="0.8"
+            stroke-dasharray="10 8"
+            stroke-linecap="round"
+          />
+
+          <!-- Gradient for path -->
+          <defs>
+            <linearGradient id="pathGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:rgba(255, 180, 210, 0.8);stop-opacity:1" />
+              <stop offset="50%" style="stop-color:rgba(255, 143, 177, 0.6);stop-opacity:1" />
+              <stop offset="100%" style="stop-color:rgba(214, 53, 113, 0.8);stop-opacity:1" />
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <!-- Dash markers container (populated by JavaScript) -->
+        <div id="dashMarkers"></div>
+
+        <!-- Checkpoints -->
+        <div class="checkpoint" data-checkpoint="0" style="left: 100px; top: 100px;">
+          <div class="pin"></div>
+        </div>
+        <div class="checkpoint" data-checkpoint="1" style="left: 300px; top: 250px;">
+          <div class="pin"></div>
+        </div>
+        <div class="checkpoint" data-checkpoint="2" style="left: 500px; top: 850px;">
+          <div class="pin"></div>
+        </div>
+        <div class="checkpoint" data-checkpoint="3" style="left: 400px; top: 1300px;">
+          <div class="pin"></div>
+        </div>
+        <div class="checkpoint" data-checkpoint="4" style="left: 200px; top: 1600px;">
+          <div class="pin"></div>
+        </div>
+        <div class="checkpoint" data-checkpoint="5" style="left: 400px; top: 1900px;">
+          <div class="pin"></div>
+        </div>
+        <div class="checkpoint" data-checkpoint="6" style="left: 600px; top: 2200px;">
+          <div class="pin"></div>
+        </div>
+        <div class="checkpoint" data-checkpoint="7" style="left: 300px; top: 2500px;">
+          <div class="pin"></div>
+        </div>
+        <div class="checkpoint" data-checkpoint="8" style="left: 500px; top: 2800px;">
+          <div class="pin"></div>
+        </div>
+
+        <!-- Mini Card Markers (appear at checkpoints after visiting) -->
+        <div class="mini-card-markers">
+          <div class="mini-card-marker hidden" data-mini-card="0">
+            <div class="mini-card-content">
+              <div class="mini-card-photo" style="background-image: url('images/timeline-images/1.png'); background-size: cover; background-position: center;"></div>
+            </div>
+            <div class="mini-card-pointer"></div>
+          </div>
+          <div class="mini-card-marker hidden" data-mini-card="1">
+            <div class="mini-card-content">
+              <div class="mini-card-photo" style="background-image: url('images/timeline-images/2.png'); background-size: cover; background-position: center;"></div>
+            </div>
+            <div class="mini-card-pointer"></div>
+          </div>
+          <div class="mini-card-marker hidden" data-mini-card="2">
+            <div class="mini-card-content">
+              <div class="mini-card-photo" style="background-image: url('images/timeline-images/3.png'); background-size: cover; background-position: center;"></div>
+            </div>
+            <div class="mini-card-pointer"></div>
+          </div>
+          <div class="mini-card-marker hidden" data-mini-card="3">
+            <div class="mini-card-content">
+              <div class="mini-card-photo" style="background-image: url('images/timeline-images/4.png'); background-size: cover; background-position: center;"></div>
+            </div>
+            <div class="mini-card-pointer"></div>
+          </div>
+          <div class="mini-card-marker hidden" data-mini-card="4">
+            <div class="mini-card-content">
+              <div class="mini-card-photo" style="background-image: url('images/timeline-images/5.png'); background-size: cover; background-position: center;"></div>
+            </div>
+            <div class="mini-card-pointer"></div>
+          </div>
+          <div class="mini-card-marker hidden" data-mini-card="5">
+            <div class="mini-card-content">
+              <div class="mini-card-photo" style="background-image: url('images/timeline-images/6.png'); background-size: cover; background-position: center;"></div>
+            </div>
+            <div class="mini-card-pointer"></div>
+          </div>
+          <div class="mini-card-marker hidden" data-mini-card="6">
+            <div class="mini-card-content">
+              <div class="mini-card-photo" style="background-image: url('images/timeline-images/7.png'); background-size: cover; background-position: center;"></div>
+            </div>
+            <div class="mini-card-pointer"></div>
+          </div>
+          <div class="mini-card-marker hidden promise-marker" data-mini-card="7">
+            <div class="mini-card-content promise-emoji">
+              🤝
+            </div>
+            <div class="mini-card-pointer"></div>
+          </div>
+        </div>
+
+        <!-- Moving Love Icon -->
+        <div class="love-mover">❤</div>
+
+        <!-- My Valentine Button (shown after all cards visited) -->
+        <div class="explore-section hidden" id="exploreSection">
+          <button class="explore-btn" id="exploreBtn">My Valentine</button>
+        </div>
+      </div>
+
+      <!-- Journey Start Board (anchored to initial checkpoint) -->
+      <div class="journey-start-board hidden" id="journeyStartBoard">
+        <div class="start-board-content">
+          <p class="start-board-text">Our journey begins here 💫</p>
+        </div>
+        <div class="start-board-pointer"></div>
+      </div>
+
+      <!-- Timeline Cards (hidden initially) -->
+      <div class="timeline-cards">
+        <article class="timeline-card" data-card="0">
+          <button class="close-card" data-close="0" aria-label="Close card">×</button>
+          <p class="eyebrow">21 February 2025</p>
+          <h3>That first captured moment</h3>
+          <p class="timeline-text">
+            Our very first photo together—dressed up, side by side, with no idea that this snapshot would become the start of something beautiful. Just two people, one frame, and a future waiting to unfold.
+          </p>
+          <div class="timeline-photo" style="background-image: url('images/timeline-images/1.png'); background-size: cover; background-position: center;"></div>
+          <button class="next-btn" data-next="0">Next →</button>
+        </article>
+
+        <article class="timeline-card" data-card="1">
+          <button class="close-card" data-close="1" aria-label="Close card">×</button>
+          <p class="eyebrow">1 June 2025</p>
+          <h3>That long walk and our first Mogu Mogu</h3>
+          <p class="timeline-text">
+            We walked and walked until we were completely sweated out, then finally stopped for our first drink together. Cold, colorful, and exactly what we needed—just like each other.
+          </p>
+          <div class="timeline-photo" style="background-image: url('images/timeline-images/2.png'); background-size: cover; background-position: center;"></div>
+          <button class="next-btn" data-next="1">Next →</button>
+        </article>
+
+        <article class="timeline-card" data-card="2">
+          <button class="close-card" data-close="2" aria-label="Close card">×</button>
+          <p class="eyebrow">16 July 2025</p>
+          <h3>Anandban and a thousand little moments</h3>
+          <p class="timeline-text">
+            Our first real date at Anandban—soothing greenery, shared coffee, little gifts, and hours that felt like minutes. We collected memories in every corner, and somehow, each moment felt like it was meant just for us.
+          </p>
+          <div class="timeline-photo" style="background-image: url('images/timeline-images/3.png'); background-size: cover; background-position: center;"></div>
+          <button class="next-btn" data-next="2">Next →</button>
+        </article>
+
+        <article class="timeline-card" data-card="3">
+          <button class="close-card" data-close="3" aria-label="Close card">×</button>
+          <p class="eyebrow">20 July 2025</p>
+          <h3>Our first movie date</h3>
+          <p class="timeline-text">
+            Red seats, dim lights, and Saiyaara on the screen. Our first time watching a film together, sitting side by side, stealing glances when we thought the other wasn't looking. The movie was good, but the company was better.
+          </p>
+          <div class="timeline-photo" style="background-image: url('images/timeline-images/4.png'); background-size: cover; background-position: center;"></div>
+          <button class="next-btn" data-next="3">Next →</button>
+        </article>
+
+        <article class="timeline-card" data-card="4">
+          <button class="close-card" data-close="4" aria-label="Close card">×</button>
+          <p class="eyebrow">13 October 2025</p>
+          <h3>My first birthday gift from you</h3>
+          <p class="timeline-text">
+            October 13th. You surprised me with a morse code bracelet carrying both our names and a card you made yourself. Thoughtful, personal, and so perfectly you—I couldn't have asked for anything better.
+          </p>
+          <div class="timeline-photo" style="background-image: url('images/timeline-images/5.png'); background-size: cover; background-position: center;"></div>
+          <button class="next-btn" data-next="4">Next →</button>
+        </article>
+
+        <article class="timeline-card" data-card="5">
+          <button class="close-card" data-close="5" aria-label="Close card">×</button>
+          <p class="eyebrow">7 February 2026</p>
+          <h3>Our first Rose Day together</h3>
+          <p class="timeline-text">
+            February 7th, 2026. Roses, chocolates, and the sweetness of celebrating our first Rose Day together. A day dedicated to love, and we spent every moment of it reminding each other why we're here.
+          </p>
+          <div class="timeline-photo" style="background-image: url('images/timeline-images/6.png'); background-size: cover; background-position: center;"></div>
+          <button class="next-btn" data-next="5">Next →</button>
+        </article>
+
+        <article class="timeline-card" data-card="6">
+          <button class="close-card" data-close="6" aria-label="Close card">×</button>
+          <p class="eyebrow">Forever</p>
+          <h3>This is my heart</h3>
+          <p class="timeline-text">
+            This picture—it's everything. Every time I look at it, I see us exactly as we are, exactly as we should be. This isn't just a photo. This is my heart, captured in a frame. And I want to keep it, keep us, keep this feeling—forever.
+          </p>
+          <div class="timeline-photo" style="background-image: url('images/timeline-images/7.png'); background-size: cover; background-position: center;"></div>
+          <button class="next-btn" data-next="6">Next →</button>
+        </article>
+
+        <article class="timeline-card promise-card-special" data-card="7">
+          <button class="close-card" data-close="7" aria-label="Close card">×</button>
+          <p class="eyebrow">Our Promise</p>
+          <h3>Forever starts now</h3>
+          <p class="timeline-text">
+            We promise to never leave each other, no matter what storms come or how hard life gets. We'll keep loving like this—fiercely, gently, completely. We'll keep living together, building memories, sharing dreams, and holding onto each other through every season. This isn't just a moment—this is our forever. And we choose it, choose us, every single day.
+          </p>
+          <button class="make-promise-btn" id="makePromiseBtn">Make a Promise</button>
+        </article>
+      </div>
+    </main>
+
+    <script src="timeline-script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# System files
+.DS_Store
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.swp
+
+# Test files (not needed in production)
+test-*.js
+screenshot-test.js
+final-live-test.js
+debug-screenshots.js
+deep-debug.js
+final-test.js
+fullpage-test.js
+check-card-content.js
+listen-console.js
+
+# Screenshots (not needed in production)
+*.png
+
+# Backup files
+*-backup.*

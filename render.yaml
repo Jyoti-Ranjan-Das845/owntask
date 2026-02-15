@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: valentine-timeline
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: BREVO_API_KEY
+        sync: false
+      - key: SENDER_EMAIL
+        sync: false
+      - key: SENDER_NAME
+        sync: false
+      - key: NODE_ENV
+        value: production

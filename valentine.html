@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentine Celebration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="valentine.css" />
+  </head>
+  <body>
+    <!-- Curtains opening effect -->
+    <div class="curtain-left"></div>
+    <div class="curtain-right"></div>
+
+    <div class="confetti-layer" aria-hidden="true"></div>
+    <div class="floating-hearts" aria-hidden="true">
+      <span>❤</span>
+      <span>✦</span>
+      <span>❤</span>
+      <span>✦</span>
+      <span>❤</span>
+      <span>✦</span>
+      <span>❤</span>
+      <span>✦</span>
+    </div>
+
+    <!-- Left VALENTINE cards (OUTSIDE container) -->
+    <div class="letter-cards left-cards">
+      <div class="wall-pin top-pin"></div>
+      <div class="letter-card">V</div>
+      <div class="card-string-segment"></div>
+      <div class="letter-card">A</div>
+      <div class="card-string-segment"></div>
+      <div class="letter-card">L</div>
+      <div class="card-string-segment"></div>
+      <div class="letter-card">E</div>
+      <div class="card-string-segment"></div>
+      <div class="letter-card">N</div>
+      <div class="card-string-segment"></div>
+      <div class="letter-card">T</div>
+      <div class="card-string-segment"></div>
+      <div class="letter-card">I</div>
+      <div class="card-string-segment"></div>
+      <div class="letter-card">N</div>
+      <div class="card-string-segment"></div>
+      <div class="letter-card">E</div>
+    </div>
+
+    <!-- Right VALENTINE cards (OUTSIDE container) -->
+    <div class="letter-cards right-cards">
+      <div class="wall-pin top-pin"></div>
+      <div class="letter-card">V</div>
+      <div class="card-string-segment"></div>
+      <div class="letter-card">A</div>
+      <div class="card-string-segment"></div>
+      <div class="letter-card">L</div>
+      <div class="card-string-segment"></div>
+      <div class="letter-card">E</div>
+      <div class="card-string-segment"></div>
+      <div class="letter-card">N</div>
+      <div class="card-string-segment"></div>
+      <div class="letter-card">T</div>
+      <div class="card-string-segment"></div>
+      <div class="letter-card">I</div>
+      <div class="card-string-segment"></div>
+      <div class="letter-card">N</div>
+      <div class="card-string-segment"></div>
+      <div class="letter-card">E</div>
+    </div>
+
+    <main class="celebration-board">
+      <div class="sparkle-layer" aria-hidden="true"></div>
+
+      <div class="stage-area">
+        <div class="balloon-stack left">
+          <div class="balloon pink"></div>
+          <div class="balloon peach"></div>
+          <div class="balloon coral"></div>
+        </div>
+
+        <div class="stage">
+          <!-- String lights now sit inside the stage so they hug the cake container -->
+          <div class="string-lights left-u" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="string-lights right-u" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="backdrop-glow"></div>
+          <div class="table">
+            <div class="table-top"></div>
+            <div class="table-leg"></div>
+          </div>
+          <div class="cake">
+            <div class="cake-plate"></div>
+            <div class="cake-body">
+              <div class="cake-drip"></div>
+              <div class="cake-middle"></div>
+              <div class="cake-top"></div>
+            </div>
+            <div class="candles">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div class="floating-hearts-stage">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div class="balloon-stack right">
+          <div class="balloon blue"></div>
+          <div class="balloon purple"></div>
+          <div class="balloon pink"></div>
+        </div>
+      </div>
+
+      <div class="valentine-message hidden" id="valentineMessage">
+        Happy Valentine's Day Sonussi 💕
+      </div>
+    </main>
+    <script src="valentine.js"></script>
+  </body>
+</html>
