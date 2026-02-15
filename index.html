@@ -470,13 +470,20 @@
         font-size: 1rem;
       }
 
+      .preview-card-wrapper {
+        max-width: 90vw;
+        max-height: 90vh;
+        overflow-y: auto;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+      }
+
       .preview-card {
         grid-template-columns: 1fr;
         padding: 1rem;
-        max-width: 90vw;
-        max-height: 90vh;
+        width: 100%;
         gap: 1rem;
-        overflow-y: auto;
       }
 
       .preview-image-box {
@@ -587,24 +594,26 @@
 
   <!-- Preview Stage -->
   <div class="preview-stage" id="previewStage">
-    <div class="preview-card">
-      <!-- Left Side - Photo -->
-      <div class="preview-photo-section">
-        <div class="preview-image-box">
-          <img src="images/preview.png" alt="Us" />
+    <div class="preview-card-wrapper">
+      <div class="preview-card">
+        <!-- Left Side - Photo -->
+        <div class="preview-photo-section">
+          <div class="preview-image-box">
+            <img src="images/preview.png" alt="Us" />
+          </div>
         </div>
-      </div>
 
-      <!-- Right Side - Text Content -->
-      <div class="preview-text-section">
-        <div class="welcome-header">WELCOME, MY SONUSS</div>
-        <h2 class="preview-title">Every adventure starts with us</h2>
-        <p class="preview-description">
-          This space is for the next chapter—where our favorite memories meet the surprises I've been putting together just for you. Scroll when you're ready to see what's waiting.
-        </p>
-        <button class="begin-journey-btn" id="beginJourneyBtn">
-          BEGIN OUR JOURNEY
-        </button>
+        <!-- Right Side - Text Content -->
+        <div class="preview-text-section">
+          <div class="welcome-header">WELCOME, MY SONUSS</div>
+          <h2 class="preview-title">Every adventure starts with us</h2>
+          <p class="preview-description">
+            This space is for the next chapter—where our favorite memories meet the surprises I've been putting together just for you. Scroll when you're ready to see what's waiting.
+          </p>
+          <button class="begin-journey-btn" id="beginJourneyBtn">
+            BEGIN OUR JOURNEY
+          </button>
+        </div>
       </div>
     </div>
   </div>
