@@ -752,12 +752,39 @@ body.journey-active .journey-container {
 
 /* iPhone 16 Optimization - Scale everything smaller but keep visible */
 @media (max-width: 500px) {
+  body.journey-not-started .journey-container {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .journey-header {
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+
   .journey-header h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin: 0.5rem 0;
   }
 
   .journey-header .intro-text {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .hero-image-container {
+    max-height: 35vh;
+    margin: 1rem 0;
+  }
+
+  .hero-image {
+    max-height: 35vh;
+    width: auto;
   }
 
   .start-journey-btn {
