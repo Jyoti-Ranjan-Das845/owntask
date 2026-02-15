@@ -730,7 +730,7 @@ document.addEventListener("DOMContentLoaded", () => {
       makePromiseBtn.textContent = "Sending...";
 
       try {
-        const response = await fetch('http://localhost:3000/api/send-promise', {
+        const response = await fetch('/api/send-promise', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
