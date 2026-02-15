@@ -740,7 +740,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const data = await response.json();
 
         if (response.ok && data.success) {
-          makePromiseBtn.textContent = "Promise Sent! 💕";
+          makePromiseBtn.textContent = "Check Email 💕";
         } else {
           throw new Error(data.error || 'Failed to send');
         }
