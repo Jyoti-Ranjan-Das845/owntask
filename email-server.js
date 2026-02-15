@@ -131,9 +131,17 @@ app.post('/api/send-promise', async (req, res) => {
       </html>
     `;
 
+    // Log environment variables for debugging
+    console.log('📋 Environment Check:');
+    console.log('  BREVO_API_KEY exists:', !!process.env.BREVO_API_KEY);
+    console.log('  SENDER_EMAIL:', process.env.SENDER_EMAIL);
+    console.log('  SENDER_NAME:', process.env.SENDER_NAME);
+    console.log('  Recipients:', recipients);
+
     // Send emails using Brevo HTTP API - handle each separately to catch partial failures
     const results = await Promise.allSettled(
-      recipients.map(to => {
+      recipients.map((to, index) => {
+        console.log(`\n🔄 Preparing email ${index + 1} for ${to}`);
         const sendEmail = new SibApiV3Sdk.SendSmtpEmail();
         sendEmail.sender = {
           name: process.env.SENDER_NAME || 'Our Journey',
@@ -143,6 +151,12 @@ app.post('/api/send-promise', async (req, res) => {
         sendEmail.subject = '💕 Promise Made Forever';
         sendEmail.htmlContent = htmlContent;
         sendEmail.textContent = 'Promise made forever 💕 - We promise to never leave each other, no matter what storms come or how hard life gets.';
+
+        console.log(`  Sender: ${sendEmail.sender.name} <${sendEmail.sender.email}>`);
+        console.log(`  To: ${to}`);
+        console.log(`  Subject: ${sendEmail.subject}`);
+        console.log(`  Calling Brevo API...`);
+
         return sendEmailWithRetry(sendEmail);
       })
     );
@@ -153,19 +167,34 @@ app.post('/api/send-promise', async (req, res) => {
 
     results.forEach((result, index) => {
       const recipient = recipients[index];
+      console.log(`\n📨 Result for ${recipient}:`);
+      console.log(`  Status: ${result.status}`);
+
       if (result.status === 'fulfilled' && result.value && result.value.body && result.value.body.messageId) {
         successfulEmails.push({
           email: recipient,
           id: result.value.body.messageId
         });
-        console.log(`✅ Email sent to ${recipient} (ID: ${result.value.body.messageId})`);
+        console.log(`  ✅ SUCCESS - Message ID: ${result.value.body.messageId}`);
       } else {
         const error = result.status === 'rejected' ? result.reason : result.value;
+        console.log(`  ❌ FAILED`);
+        console.log(`  Error type: ${typeof error}`);
+        console.log(`  Error message: ${error?.message || 'Unknown error'}`);
+        console.log(`  Full error object:`, error);
+
+        if (error && typeof error === 'object') {
+          console.log(`  Error keys:`, Object.keys(error));
+          if (error.response) {
+            console.log(`  Response status:`, error.response.status || error.response.statusCode);
+            console.log(`  Response body:`, error.response.body);
+          }
+        }
+
         failedEmails.push({
           email: recipient,
-          error: error?.message || 'Unknown error'
+          error: error?.message || JSON.stringify(error) || 'Unknown error'
         });
-        console.log(`❌ Failed to send to ${recipient}:`, error?.message || 'Unknown error');
       }
     });
 
